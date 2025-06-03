@@ -1,7 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import ChannelInfo from "../components/ChannelInfo";
-import RelatedVideos from "../components/RelatedVideos";
+import RelatedVideos from "../components/ChannelPlaylist";
+import ChannelPlaylist from "../components/ChannelPlaylist";
 
 const VideoDetail = () => {
   const {
@@ -27,7 +28,7 @@ const VideoDetail = () => {
         </div>
       </article>
       <section>
-        <RelatedVideos id={video.id} />
+        <ChannelPlaylist channelId={channelId} />
       </section>
     </section>
   );

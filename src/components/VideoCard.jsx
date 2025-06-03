@@ -8,7 +8,7 @@ const VideoCard = ({ video }) => {
   return (
     <li
       onClick={() => {
-        navigate(`videos/watch/${video.id}`, { state: { video } });
+        navigate(`/videos/watch/${video.id}`, { state: { video } });
       }}>
       <img className="w-full" src={thumbnails.medium.url} alt={title} />
       <div>
