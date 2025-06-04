@@ -7,6 +7,31 @@ export default class Youtube {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }
 
+  async channelImageURL(id) {
+    return this.apiClient
+      .channels({
+        params: {
+          part: "snippet",
+          id,
+        },
+      })
+      .then((res) => res.data.items[0].snippet.thumbnails.default.url);
+  }
+
+  async searchByChannelId(channelId) {
+    return this.apiClient
+      .playlist({
+        params: {
+          part: "snippet",
+          channelId,
+          maxResults: 25,
+          order: "date",
+          type: "video",
+        },
+      })
+      .then((res) => res.data.items);
+  }
+
   async #searchByKeyword(keyword) {
     return this.apiClient
       .search({
@@ -17,8 +42,9 @@ export default class Youtube {
           q: keyword,
         },
       })
-      .then((res) => res.data.items)
-      .then((items) => items.map((item) => ({ ...item, id: item.id.videoId })));
+      .then((res) =>
+        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      );
   }
 
   async #mostPopular(keyword) {

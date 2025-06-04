@@ -17,17 +17,17 @@
         "publishedAt": "2019-07-03T14:47:23Z",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/TcXFMFkDeUN8pDqZ-2WShXiG6lXtpoRG2kfRMg3Nd9g947mESyRYqlWtwcoy9FyjiiLVLaTd=s88-c-k-c0x00ffffff-no-rj",
+            "url": "https://picsum.photos/88/88?random=1",
             "width": 88,
             "height": 88
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/TcXFMFkDeUN8pDqZ-2WShXiG6lXtpoRG2kfRMg3Nd9g947mESyRYqlWtwcoy9FyjiiLVLaTd=s240-c-k-c0x00ffffff-no-rj",
+            "url": "https://picsum.photos/240/240?random=1",
             "width": 240,
             "height": 240
           },
           "high": {
-            "url": "https://yt3.ggpht.com/TcXFMFkDeUN8pDqZ-2WShXiG6lXtpoRG2kfRMg3Nd9g947mESyRYqlWtwcoy9FyjiiLVLaTd=s800-c-k-c0x00ffffff-no-rj",
+            "url": "https://picsum.photos/800/800?random=1",
             "width": 800,
             "height": 800
           }
