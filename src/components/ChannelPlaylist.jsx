@@ -8,6 +8,7 @@ const ChannelPlaylist = ({ channelId }) => {
   const { data: videos } = useQuery({
     queryKey: ["playlist", channelId],
     queryFn: () => youtube.searchByChannelId(channelId),
+    staleTime: 1000 * 60 * 5,
   });
   return (
     <>
