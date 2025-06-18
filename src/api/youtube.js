@@ -27,6 +27,7 @@ export default class Youtube {
           maxResults: 10,
           order: "date",
           type: "video",
+          regionCode: "KR",
         },
       })
       .then((res) =>
@@ -42,6 +43,7 @@ export default class Youtube {
           maxResults: 25,
           type: "video",
           q: keyword,
+          regionCode: "KR",
         },
       })
       .then((res) =>
@@ -49,14 +51,14 @@ export default class Youtube {
       );
   }
 
-  async #mostPopular(keyword) {
+  async #mostPopular() {
     return this.apiClient
       .videos({
         params: {
           part: "snippet",
           maxResults: 25,
           chart: "mostPopular",
-          q: keyword,
+          regionCode: "KR",
         },
       })
       .then((res) => res.data.items);
