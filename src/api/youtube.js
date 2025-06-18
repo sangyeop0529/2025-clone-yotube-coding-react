@@ -20,16 +20,18 @@ export default class Youtube {
 
   async searchByChannelId(channelId) {
     return this.apiClient
-      .playlist({
+      .search({
         params: {
           part: "snippet",
           channelId,
-          maxResults: 25,
+          maxResults: 10,
           order: "date",
           type: "video",
         },
       })
-      .then((res) => res.data.items);
+      .then((res) =>
+        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      );
   }
 
   async #searchByKeyword(keyword) {
